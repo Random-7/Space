@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerControler : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] float Speed = 5.0f;
     [SerializeField] float BoostAmount = 2.0f;
+    [SerializeField] PlayerAttack playerAttack;
 
     PlayerControls controls;
     Vector2 move;
@@ -14,6 +15,7 @@ public class PlayerControler : MonoBehaviour
 
     void Awake()
     {
+        //Create Controls
         controls =  new PlayerControls();
         //Movement bindings
         controls.Game.Movement.performed += ctx => move = ctx.ReadValue<Vector2>();
@@ -21,6 +23,8 @@ public class PlayerControler : MonoBehaviour
         //Boost Bindings
         controls.Game.Boost.performed += ctx => boost += BoostAmount;
         controls.Game.Boost.canceled += ctx => boost = 1.0f;
+        //Attack Binding
+        controls.Game.Attack1.performed += ctx => playerAttack.Fire1();
     }
     void OnEnable() 
     {

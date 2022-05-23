@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] GameObject AttackProjectile;
+    [SerializeField] GameObject Fire1Projectile;
+    [SerializeField] GameObject Fire2Projectile;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +19,14 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
-    void Fire()
+    public void Fire1()
     {
         print("fire");
+        Instantiate(Fire1Projectile, transform.position, Quaternion.identity);
+    }
+
+    public void Fire2()
+    {
+        print("Fire2");
     }
 }
