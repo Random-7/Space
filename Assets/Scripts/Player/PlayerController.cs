@@ -4,10 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-
-    [SerializeField] float Speed = 5.0f;
-    [SerializeField] float BoostAmount = 2.0f;
     [SerializeField] PlayerAttack playerAttack;
+    [SerializeField] PlayerMovement playerMovement;
 
     PlayerControls controls;
     Vector2 move;
@@ -18,11 +16,11 @@ public class PlayerController : MonoBehaviour
         //Create Controls
         controls =  new PlayerControls();
         //Movement bindings
-        controls.Game.Movement.performed += ctx => move = ctx.ReadValue<Vector2>();
-        controls.Game.Movement.canceled += ctx => move = Vector2.zero;
+        controls.Game.Movement.performed += ctx => playerMovement.MovementDirection( ctx.ReadValue<Vector2>().x, ctx.ReadValue<Vector2>().y);
+        controls.Game.Movement.canceled += ctx => playerMovement.MovementDirection( 0.0f, 0.0f);
         //Boost Bindings
-        controls.Game.Boost.performed += ctx => boost += BoostAmount;
-        controls.Game.Boost.canceled += ctx => boost = 1.0f;
+        controls.Game.Boost.performed += ctx => playerMovement.ApplyBoost();
+        controls.Game.Boost.canceled += ctx => playerMovement.RemoveBoost();
         //Attack Binding
         controls.Game.Attack1.performed += ctx => playerAttack.Fire1(true);
         controls.Game.Attack1.canceled += ctx => playerAttack.Fire1(false);
@@ -41,10 +39,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Using Axis to help with multiple controller types ie. Keyboard or controller
-        // WASD - Arrow keys / joy stick should work for this
-        Vector2 direction = (new Vector2(move.x,move.y) * Speed * boost) * Time.deltaTime;
-        transform.Translate(direction, Space.World);
+
     }
 
 }

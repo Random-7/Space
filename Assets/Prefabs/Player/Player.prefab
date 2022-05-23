@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8079164627125749032}
   - component: {fileID: 8079164627125749034}
   - component: {fileID: 8079164627125749035}
+  - component: {fileID: 1597187874432404642}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -50,7 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e295a7f3e71b6043855723ffd027d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+  fire1Rate: 1
+  fire2Rate: 1
 --- !u!114 &8079164627125749034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +68,7 @@ MonoBehaviour:
   Speed: 6
   BoostAmount: 2
   playerAttack: {fileID: 8079164627125749035}
+  playerMovement: {fileID: 1597187874432404642}
 --- !u!114 &8079164627125749035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +87,18 @@ MonoBehaviour:
   Fire1Spawn: {fileID: 5178932105433185236}
   Fire2Spawn1: {fileID: 7836723936653549553}
   Fire2Spawn2: {fileID: 6153962295670484944}
+--- !u!114 &1597187874432404642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648885552919012651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f836f7a4a3107d94997e81658bcd3d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3406939957549336308
 GameObject:
   m_ObjectHideFlags: 0

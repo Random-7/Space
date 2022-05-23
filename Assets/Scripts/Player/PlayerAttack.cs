@@ -12,19 +12,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Transform Fire2Spawn1;
     [SerializeField] Transform Fire2Spawn2;
 
-
     bool Firing1 = false;
     bool Firing2 = false;
 
     float fire1Timer = 0.0f;
     float fire2Timer = 0.0f;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -44,10 +36,12 @@ public class PlayerAttack : MonoBehaviour
         }
 
     }
+
     public void Fire1(bool firing)
     {
        Firing1 = firing;
     }
+
     public void Fire2(bool firing)
     {
        Firing2 = firing;
