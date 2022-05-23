@@ -262,32 +262,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8079164627125749034, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
-      propertyPath: playerAttack
-      value: 
-      objectReference: {fileID: 8079164627125749035}
     - target: {fileID: 8079164627125749035, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
-      propertyPath: Fire2Projetiel
+      propertyPath: player
       value: 
-      objectReference: {fileID: 4598723875006391258, guid: 972df2b9f6aae5b49a5454d8d7d1e0cc, type: 3}
-    - target: {fileID: 8079164627125749035, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
-      propertyPath: Fire1Projectile
-      value: 
-      objectReference: {fileID: 4598723875006391258, guid: 972df2b9f6aae5b49a5454d8d7d1e0cc, type: 3}
-    - target: {fileID: 8079164627125749035, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
-      propertyPath: Fire2Projectile
-      value: 
-      objectReference: {fileID: 4598723875006391258, guid: 972df2b9f6aae5b49a5454d8d7d1e0cc, type: 3}
+      objectReference: {fileID: 8079164627125749037}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
---- !u!114 &8079164627125749035 stripped
+--- !u!114 &8079164627125749037 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8079164627125749035, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8079164627125749032, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
   m_PrefabInstance: {fileID: 8079164627125749030}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1992790dbc8a103499ee2283c29d888f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e295a7f3e71b6043855723ffd027d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -32,6 +32,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8079164627163569741}
+  - {fileID: 5178932105433185236}
+  - {fileID: 7836723936653549553}
+  - {fileID: 6153962295670484944}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e295a7f3e71b6043855723ffd027d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 1
 --- !u!114 &8079164627125749034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 6
   BoostAmount: 2
+  playerAttack: {fileID: 8079164627125749035}
 --- !u!114 &8079164627125749035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +78,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1992790dbc8a103499ee2283c29d888f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackProjectile: {fileID: 4598723875006391258, guid: 972df2b9f6aae5b49a5454d8d7d1e0cc, type: 3}
+  player: {fileID: 8079164627125749032}
+  Fire1Projectile: {fileID: 4598723875006391258, guid: 9389b32d36edd9c45abfea50d7dd5629, type: 3}
+  Fire2Projectile: {fileID: 4598723875006391258, guid: 972df2b9f6aae5b49a5454d8d7d1e0cc, type: 3}
+  Fire1Spawn: {fileID: 5178932105433185236}
+  Fire2Spawn1: {fileID: 7836723936653549553}
+  Fire2Spawn2: {fileID: 6153962295670484944}
+--- !u!1 &3406939957549336308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6153962295670484944}
+  m_Layer: 0
+  m_Name: Fire2Spawn2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6153962295670484944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3406939957549336308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.275, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 156407043952767304}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5865420777040987813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7836723936653549553}
+  m_Layer: 0
+  m_Name: Fire2Spawn1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7836723936653549553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5865420777040987813}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.281, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 156407043952767304}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8045193658477728429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5178932105433185236}
+  m_Layer: 0
+  m_Name: Fire1Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5178932105433185236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8045193658477728429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.364, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 156407043952767304}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8079164627163569743
 GameObject:
   m_ObjectHideFlags: 0

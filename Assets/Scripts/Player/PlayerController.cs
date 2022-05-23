@@ -24,7 +24,11 @@ public class PlayerController : MonoBehaviour
         controls.Game.Boost.performed += ctx => boost += BoostAmount;
         controls.Game.Boost.canceled += ctx => boost = 1.0f;
         //Attack Binding
-        controls.Game.Attack1.performed += ctx => playerAttack.Fire1();
+        controls.Game.Attack1.performed += ctx => playerAttack.Fire1(true);
+        controls.Game.Attack1.canceled += ctx => playerAttack.Fire1(false);
+        controls.Game.Attack2.performed += ctx => playerAttack.Fire2(true);
+        controls.Game.Attack2.canceled += ctx => playerAttack.Fire2(false);
+
     }
     void OnEnable() 
     {
