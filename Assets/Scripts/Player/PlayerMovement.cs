@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    
-    [SerializeField] float Speed = 5.0f;
-    [SerializeField] float BoostAmount = 2.0f;
+    [SerializeField] Player player;
 
     Vector2 movementDir;
     float boost = 1.0f;
 
-    void SetBoostAmount(float diff) { BoostAmount += diff; }
-
     public void ApplyBoost() 
     { 
-        boost += BoostAmount;
+        boost += player.GetBoostAmount();
         print(boost);
     }
     public void RemoveBoost() 
@@ -27,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var MovementAndSpeed = (movementDir * Speed * boost) * Time.deltaTime;
+        var MovementAndSpeed = (movementDir * player.GetSpeed() * boost) * Time.deltaTime;
         transform.Translate(MovementAndSpeed, Space.World);
     }
 

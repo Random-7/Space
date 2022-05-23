@@ -53,6 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire1Rate: 1
   fire2Rate: 1
+  Speed: 5
+  BoostAmount: 2
 --- !u!114 &8079164627125749034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,8 +67,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219d3aa6e096b424f99749d6f6a72bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 6
-  BoostAmount: 2
   playerAttack: {fileID: 8079164627125749035}
   playerMovement: {fileID: 1597187874432404642}
 --- !u!114 &8079164627125749035
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f836f7a4a3107d94997e81658bcd3d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 8079164627125749032}
 --- !u!1 &3406939957549336308
 GameObject:
   m_ObjectHideFlags: 0
