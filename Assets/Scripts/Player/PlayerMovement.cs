@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float Speed = 5.0f;
+    [SerializeField] float BoostMultiplier = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
         // TODO: might need to clamp the overall speed, moving dianglely might be faster.
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
-        transform.position += new Vector3(horizontal, vertical, 0) * Time.deltaTime * Speed;
+        var boost = 1.0f;
+        if (Input.GetAxis("Fire3") > 0)
+            boost = BoostMultiplier;
+
+        transform.position += new Vector3(horizontal, vertical, 0) * Time.deltaTime * Speed * boost;
     }
 }
