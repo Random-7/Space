@@ -53,6 +53,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack2"",
+                    ""type"": ""Button"",
+                    ""id"": ""7dd6b5bd-b6a2-400b-a637-ff34197da4e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -165,6 +174,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Attack1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7269cb35-8e6e-47ff-af3b-d2813a66730d"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8fc651ec-a77f-49d8-b20c-017825290c4e"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -176,6 +207,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Game_Movement = m_Game.FindAction("Movement", throwIfNotFound: true);
         m_Game_Boost = m_Game.FindAction("Boost", throwIfNotFound: true);
         m_Game_Attack1 = m_Game.FindAction("Attack1", throwIfNotFound: true);
+        m_Game_Attack2 = m_Game.FindAction("Attack2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -238,6 +270,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Game_Movement;
     private readonly InputAction m_Game_Boost;
     private readonly InputAction m_Game_Attack1;
+    private readonly InputAction m_Game_Attack2;
     public struct GameActions
     {
         private @PlayerControls m_Wrapper;
@@ -245,6 +278,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Game_Movement;
         public InputAction @Boost => m_Wrapper.m_Game_Boost;
         public InputAction @Attack1 => m_Wrapper.m_Game_Attack1;
+        public InputAction @Attack2 => m_Wrapper.m_Game_Attack2;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -263,6 +297,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Attack1.started -= m_Wrapper.m_GameActionsCallbackInterface.OnAttack1;
                 @Attack1.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnAttack1;
                 @Attack1.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnAttack1;
+                @Attack2.started -= m_Wrapper.m_GameActionsCallbackInterface.OnAttack2;
+                @Attack2.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnAttack2;
+                @Attack2.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnAttack2;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -276,6 +313,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Attack1.started += instance.OnAttack1;
                 @Attack1.performed += instance.OnAttack1;
                 @Attack1.canceled += instance.OnAttack1;
+                @Attack2.started += instance.OnAttack2;
+                @Attack2.performed += instance.OnAttack2;
+                @Attack2.canceled += instance.OnAttack2;
             }
         }
     }
@@ -285,5 +325,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnBoost(InputAction.CallbackContext context);
         void OnAttack1(InputAction.CallbackContext context);
+        void OnAttack2(InputAction.CallbackContext context);
     }
 }
