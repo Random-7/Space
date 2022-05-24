@@ -1,14 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
  
 public class BGScroller : MonoBehaviour {
-    [SerializeField] private RawImage _img;
-    [SerializeField] private float _x, _y;
+    [SerializeField] Texture[] sourceImages;
+    [SerializeField] RawImage img;
+    [SerializeField] float x, y;
+
+    void Awake()
+    {
+        img.texture = sourceImages[Random.Range(0,sourceImages.Length-1)];
+    }
  
     void Update()
     {
-        _img.uvRect = new Rect(_img.uvRect.position + new Vector2(_x,_y) * Time.deltaTime,_img.uvRect.size);
+        img.uvRect = new Rect(img.uvRect.position + new Vector2(x,y) * Time.deltaTime, img.uvRect.size);
     }
 }
