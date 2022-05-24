@@ -130,6 +130,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 839101197}
     m_Modifications:
+    - target: {fileID: 1097172717, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
+      propertyPath: x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097172717, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
+      propertyPath: y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097172717, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
+      propertyPath: img
+      value: 
+      objectReference: {fileID: 1097172715}
+    - target: {fileID: 1097172717, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
+      propertyPath: sourceImages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097172717, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
+      propertyPath: sourceImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 79109d2a0f3419d49a53c44d592051f9, type: 3}
+    - target: {fileID: 1097172717, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
+      propertyPath: sourceImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: 0dbac7f49a5b64446bd26fc15393c659, type: 3}
+    - target: {fileID: 1097172717, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
+      propertyPath: sourceImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 2800000, guid: 2929de9c8eb002649b5dfeb327886672, type: 3}
+    - target: {fileID: 1097172717, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
+      propertyPath: sourceImages.Array.data[3]
+      value: 
+      objectReference: {fileID: 2800000, guid: 962c9050d6a838149a79e9ac3fe8749f, type: 3}
     - target: {fileID: 3541950150470897721, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -273,7 +305,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.138139
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -410,6 +442,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3541950150470897721, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
   m_PrefabInstance: {fileID: 15051184}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1097172715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3541950150470898119, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
+  m_PrefabInstance: {fileID: 15051184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8079164627125749030
 PrefabInstance:
   m_ObjectHideFlags: 0

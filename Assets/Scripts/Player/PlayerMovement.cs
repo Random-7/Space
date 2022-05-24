@@ -18,9 +18,9 @@ public class PlayerMovement : MonoBehaviour
         boost = 1.0f; 
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        var MovementAndSpeed = (movementDir * player.GetSpeed() * boost) * Time.deltaTime;
+        var MovementAndSpeed = movementDir * player.GetSpeed() * boost * Time.fixedDeltaTime;
         transform.Translate(MovementAndSpeed, Space.World);
     }
 
