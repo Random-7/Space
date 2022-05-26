@@ -189,7 +189,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8fc651ec-a77f-49d8-b20c-017825290c4e"",
-                    ""path"": ""<Keyboard>/ctrl"",
+                    ""path"": ""<Keyboard>/alt"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
