@@ -17,10 +17,9 @@ public class Spawner : MonoBehaviour
     {
         for (int waveIndex = 0; waveIndex < waveConfigs.Count; waveIndex++)
         {
-            yield return StartCoroutine(SpawnEnemiesInWave(waveConfigs[waveIndex]));
             game.IncreaseWaveCount(1);
+            yield return StartCoroutine(SpawnEnemiesInWave(waveConfigs[waveIndex]));
         }
-        print("All current waves spawned");
     }
 
     private IEnumerator SpawnEnemiesInWave(WaveConfig waveConfig)
