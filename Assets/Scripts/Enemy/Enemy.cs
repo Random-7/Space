@@ -6,9 +6,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] float fire1Rate = 1.0f;
     [SerializeField] float fire2Rate = 1.0f;
-    [SerializeField] float Speed = 5.0f;
+    [SerializeField] float Speed = 2.0f;
     [SerializeField] float BoostAmount = 2.0f;
-    [SerializeField] Transform[] Path;
 
     public float GetFire1Rate() { return fire1Rate; }
     public float GetFire2Rate() { return fire2Rate; }
