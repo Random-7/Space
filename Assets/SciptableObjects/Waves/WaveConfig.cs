@@ -7,6 +7,7 @@ public class WaveConfig : ScriptableObject
 {
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] GameObject pathPrefab;
+    [SerializeField] Weapon weapon;
     [SerializeField] float enemySpeed = 2.0f;
     [SerializeField] float spawnInterval = 1f;
     [SerializeField] float spawnIntervalVariance = 0.2f;
@@ -17,6 +18,7 @@ public class WaveConfig : ScriptableObject
 
     public GameObject GetEnemyPrefab() { return enemyPrefab; }
     public GameObject GetPathPrefab() { return pathPrefab; }
+    public Weapon GetWeapon() { return weapon; }
     public float GetEnemySpeed() { return  enemySpeed; }    
     public float GetSpawnInterval() { return spawnInterval; }    
     public float GetSpawnIntervalVariance() { return spawnIntervalVariance; }

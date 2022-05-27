@@ -17,8 +17,8 @@ MonoBehaviour:
   - {fileID: 6609985292276621232, guid: ae32a87063b079044aa16f8392760329, type: 3}
   - {fileID: 2582221846593803076, guid: 2cba672f9ddd7274da6113a61d4d1efa, type: 3}
   - {fileID: 7299749300215461352, guid: fc21e2679074ffc4fb9177e06540c135, type: 3}
-  FireRate: 0.5
-  ProjectileSpeed: 2
+  FireRate: 0.75
+  ProjectileSpeed: 8
   PowerModifer: 1
   Damage: 5
   DamgeRadius: 0

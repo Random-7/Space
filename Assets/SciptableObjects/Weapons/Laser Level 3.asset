@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Laser Level 3
   m_EditorClassIdentifier: 
   ProjectilePrefabs: []
-  FireRate: 4
-  ProjectileSpeed: 4
+  FireRate: 0.25
+  ProjectileSpeed: 15
   PowerModifer: 1
   Damage: 15
   DamgeRadius: 0

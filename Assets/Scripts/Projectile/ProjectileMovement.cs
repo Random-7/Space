@@ -5,8 +5,10 @@ using UnityEngine;
 public class ProjectileMovement : MonoBehaviour
 {
     [SerializeField] Weapon weapon;
+    [SerializeField] public bool IsEnemyProjectile = false;
     void OnTriggerEnter2D(Collider2D col) 
     {
+        print("Hit: " + col.gameObject.tag);
         if(col.gameObject.tag == "Enemy")
         {
             var enemy = col.GetComponent<Enemy>();
@@ -18,10 +20,21 @@ public class ProjectileMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    void Start()
+    {
+        if(!IsEnemyProjectile)
+            gameObject.layer = LayerMask.NameToLayer("Player");
+        else
+            gameObject.layer = LayerMask.NameToLayer("Enemy");
+
+    }
     // Update is called once per frame
     void Update()
     {
-        transform.position +=  new Vector3(0,1,0) * Time.deltaTime * weapon.GetProjectileSpeed();
+        if(!IsEnemyProjectile)
+            transform.position +=  new Vector3(0,1,0) * Time.deltaTime * weapon.GetProjectileSpeed();
+        else
+            transform.position +=  new Vector3(0,-1,0) * Time.deltaTime * weapon.GetProjectileSpeed();
     }
 }

@@ -27,6 +27,7 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < waveConfig.GetNumberOfEnemies(); i++){
             var spawnedEnemy = Instantiate(waveConfig.GetEnemyPrefab(), waveConfig.GetStartingWaypoint().position, Quaternion.identity);
             spawnedEnemy.GetComponent<EnemyMovement>().SetWaveConfig(waveConfig);
+            spawnedEnemy.GetComponent<Enemy>().SetWeapon(waveConfig.GetWeapon());
             yield return new WaitForSeconds(Random.Range(waveConfig.GetSpawnInterval(), 
                 (waveConfig.GetSpawnInterval() + waveConfig.GetSpawnIntervalVariance())));
         }
