@@ -8,13 +8,17 @@ public class ProjectileMovement : MonoBehaviour
     [SerializeField] public bool IsEnemyProjectile = false;
     void OnTriggerEnter2D(Collider2D col) 
     {
-        print("Hit: " + col.gameObject.tag);
         if(col.gameObject.tag == "Enemy")
         {
             var enemy = col.GetComponent<Enemy>();
             enemy.TakeHit(weapon.GetDamage());
             print("Enemy named: " + col.gameObject.name + " Takes hit for: " + weapon.GetDamage());
 
+        } else if (col.gameObject.tag == "Player")
+        {
+            var player = col.GetComponent<Player>();
+            player.TakeHit(weapon.GetDamage());
+            print("Player Takes hit for: " + weapon.GetDamage());
         } else if (col.gameObject.tag == "Shreddar")
         {
             Destroy(gameObject);
