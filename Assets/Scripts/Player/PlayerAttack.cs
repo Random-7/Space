@@ -6,8 +6,8 @@ public class PlayerAttack : MonoBehaviour
 {
 
     [SerializeField] Player player;
-    [SerializeField] GameObject Fire1Projectile;
-    [SerializeField] GameObject Fire2Projectile;
+    [SerializeField] Weapon PrimaryWeapon;
+    [SerializeField] Weapon SecondaryWeapon;
     [SerializeField] Transform Fire1Spawn;
     [SerializeField] Transform Fire2Spawn1;
     [SerializeField] Transform Fire2Spawn2;
@@ -25,13 +25,13 @@ public class PlayerAttack : MonoBehaviour
         fire2Timer += Time.deltaTime;
 
         //Get Firerate from Player class.
-        if(Firing1 && fire1Timer > player.GetFire1Rate()) {
-            Instantiate(Fire1Projectile, Fire1Spawn.position, Quaternion.identity);
+        if(Firing1 && fire1Timer > PrimaryWeapon.GetFireRate()) {
+            Instantiate(PrimaryWeapon.GetCurrentProjectilePrefab(), Fire1Spawn.position, Quaternion.identity);
             fire1Timer = 0.0f;
         }
-        if(Firing2 && fire2Timer > player.GetFire2Rate()) {
-            Instantiate(Fire2Projectile, Fire2Spawn1.position, Quaternion.identity);
-            Instantiate(Fire2Projectile, Fire2Spawn2.position, Quaternion.identity);
+        if(Firing2 && fire2Timer > SecondaryWeapon.GetFireRate()) {
+            Instantiate(SecondaryWeapon.GetCurrentProjectilePrefab(), Fire2Spawn1.position, Quaternion.identity);
+            Instantiate(SecondaryWeapon.GetCurrentProjectilePrefab(), Fire2Spawn2.position, Quaternion.identity);
             fire2Timer = 0.0f;
         }
 

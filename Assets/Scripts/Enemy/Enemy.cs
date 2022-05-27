@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float fire1Rate = 1.0f;
-    [SerializeField] float fire2Rate = 1.0f;
-
-    public float GetFire1Rate() { return fire1Rate; }
-    public float GetFire2Rate() { return fire2Rate; }
-
-
+    /*
+    Health
+        take damage
+        check if damage is lethal
+        Destroy
+    Weapon
+        what weapon
+        Set weapon
+    Game
+        Add score
+        Drop Item?
+    */
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +26,10 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void TakeHit(int amount) 
+    {
+        print(gameObject.name + " Got hit for: " + amount);
     }
 }
