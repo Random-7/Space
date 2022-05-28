@@ -227,6 +227,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1821083049}
     m_Modifications:
+    - target: {fileID: 684492221, guid: 94026b6b7472efb4fafe7d56e66c286c, type: 3}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 1494040986}
+    - target: {fileID: 1008658856518521830, guid: 94026b6b7472efb4fafe7d56e66c286c, type: 3}
+      propertyPath: m_Value
+      value: 0.604
+      objectReference: {fileID: 0}
     - target: {fileID: 1144103110180617880, guid: 94026b6b7472efb4fafe7d56e66c286c, type: 3}
       propertyPath: m_Name
       value: Hud
@@ -333,6 +341,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2500418569534557502, guid: 94026b6b7472efb4fafe7d56e66c286c, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381643498970455755, guid: 94026b6b7472efb4fafe7d56e66c286c, type: 3}
+      propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6681944275101398388, guid: 94026b6b7472efb4fafe7d56e66c286c, type: 3}
@@ -473,6 +485,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3541950150470897721, guid: b28b086246b09ee45b052aade0a6fa67, type: 3}
   m_PrefabInstance: {fileID: 15051184}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1494040986 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4381643498970455755, guid: 94026b6b7472efb4fafe7d56e66c286c, type: 3}
+  m_PrefabInstance: {fileID: 61228479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1821083048
 GameObject:
   m_ObjectHideFlags: 0

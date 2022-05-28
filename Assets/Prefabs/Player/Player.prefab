@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4356265039598580019}
   - component: {fileID: 1325873794}
   - component: {fileID: 1325873793}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -53,8 +53,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e295a7f3e71b6043855723ffd027d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire1Rate: 1
-  fire2Rate: 1
+  game: {fileID: 0}
+  Health: 30
+  MaxHealth: 30
   Speed: 5
   BoostAmount: 2
 --- !u!114 &8079164627125749034
@@ -84,8 +85,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8079164627125749032}
-  Fire1Projectile: {fileID: 4598723875006391258, guid: 9389b32d36edd9c45abfea50d7dd5629, type: 3}
-  Fire2Projectile: {fileID: 4598723875006391258, guid: 972df2b9f6aae5b49a5454d8d7d1e0cc, type: 3}
+  PrimaryWeapon: {fileID: 11400000, guid: 2bfefb4e4d9b7994aa66f6da6a656aff, type: 2}
+  SecondaryWeapon: {fileID: 11400000, guid: 2bfefb4e4d9b7994aa66f6da6a656aff, type: 2}
   Fire1Spawn: {fileID: 5178932105433185236}
   Fire2Spawn1: {fileID: 7836723936653549553}
   Fire2Spawn2: {fileID: 6153962295670484944}
@@ -178,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6153962295670484944}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire2 Spawn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7836723936653549553}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire2 Spawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5178932105433185236}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire1 Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8079164627163569741}
   - component: {fileID: 8079164627163569740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
