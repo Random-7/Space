@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd8cf8f3964a0e4c86ee20419a13213, type: 3}
+  m_Name: Menu Wave
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 5364182422067419848, guid: 727e540612fb3a742a44a100534b4032, type: 3}
+  pathPrefab: {fileID: 601248816600367809, guid: 68bf1dc903f49a24c872d43ebc614ddb, type: 3}
+  weapon: {fileID: 11400000, guid: 2bfefb4e4d9b7994aa66f6da6a656aff, type: 2}
+  enemySpeed: 8
+  spawnInterval: 3
+  spawnIntervalVariance: 1.5
+  numberOfEnemies: 5
+  numberOfRestarts: 0
