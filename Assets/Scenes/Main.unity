@@ -641,13 +641,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8079164627125749035, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
-      propertyPath: PrimaryWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 2bfefb4e4d9b7994aa66f6da6a656aff, type: 2}
-    - target: {fileID: 8079164627125749035, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
-      propertyPath: SecondaryWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 2bfefb4e4d9b7994aa66f6da6a656aff, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}

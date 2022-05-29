@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HudController : MonoBehaviour
 {
     [SerializeField] Slider HealthBar;
-    [SerializeField] GameObject ShieldBar;
+    [SerializeField] GameObject ShieldBar; //TODO fix these to match
     [SerializeField] GameObject RespawnBar;
     [SerializeField] GameObject PowerBar;
     [SerializeField] Player player;
