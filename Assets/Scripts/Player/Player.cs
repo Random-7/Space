@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     GameObject curDeathMessage;
     PlayerAttack playerAttack;
+
+    bool spawnProtection = false;
     public float GetBoostAmount() { return BoostAmount; }
 
     void Start()
@@ -30,6 +32,9 @@ public class Player : MonoBehaviour
 
     public void TakeHit(int amount)
     {
+        if(spawnProtection)
+            return;
+
        game.DecreasePlayerHealth(amount);
         if (game.GetIsDead()) {
             Die();
@@ -45,6 +50,7 @@ public class Player : MonoBehaviour
             playerAttack.enabled = false;
             var sr = GetComponentInChildren<SpriteRenderer>();
             sr.enabled = false;
+            //var collider = FindObjectOfType<BoxCollider2D>().enabled = false;
             game.Respawn();
             curDeathMessage = Instantiate(DeathMessage, Vector3.zero, Quaternion.identity);
             Time.timeScale = 0;                        
@@ -57,9 +63,19 @@ public class Player : MonoBehaviour
 
     public void LiveAgain()
     {
+        StartCoroutine(spawnProtectionDelay());
         playerAttack.enabled = true;
         var sr = GetComponentInChildren<SpriteRenderer>();
         sr.enabled = true;
+    }
+    IEnumerator spawnProtectionDelay()
+    {
+        print("spawnProtection on");
+        spawnProtection = true;
+        yield return new WaitForSeconds(3);
+        //var collider = FindObjectOfType<BoxCollider2D>().enabled = true;
+        spawnProtection = false;
+        print("spawnProtection off");
     }
     private void CheckPowerLevel()
     {
