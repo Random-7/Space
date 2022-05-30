@@ -8,26 +8,13 @@ public class HudController : MonoBehaviour
     [SerializeField] Slider HealthBar;
     [SerializeField] Slider RespawnBar;
     [SerializeField] Slider PowerBar;
-    [SerializeField] Player player;
     [SerializeField] Game game;
+
     // Start is called before the first frame update
     void Start()
     {
         var gameObject = GameObject.Find("Game");
         game = gameObject.GetComponent<Game>();
-
-        var playerObject = GameObject.Find("Player");
-        player = playerObject.GetComponent<Player>();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void UpdatePlayer(Player newPlayer)
-    {
-        player = newPlayer;
     }
 
     public void UpdateHealth(int amount)

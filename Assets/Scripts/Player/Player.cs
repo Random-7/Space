@@ -7,7 +7,9 @@ public class Player : MonoBehaviour
     [SerializeField] Game game;
     [SerializeField] float BoostAmount = 2.0f;
     [SerializeField] SceneControl sceneControl;
+    [SerializeField] GameObject DeathMessage;
 
+    GameObject curDeathMessage;
     PlayerAttack playerAttack;
     public float GetBoostAmount() { return BoostAmount; }
 
@@ -41,15 +43,23 @@ public class Player : MonoBehaviour
         if (game.CheckRespawn())
         { 
             playerAttack.enabled = false;
-            var sr = GetComponent<SpriteRenderer>();
+            var sr = GetComponentInChildren<SpriteRenderer>();
             sr.enabled = false;
             game.Respawn();
-            
+            curDeathMessage = Instantiate(DeathMessage, Vector3.zero, Quaternion.identity);
+            Time.timeScale = 0;                        
         } else {
             sceneControl.LoadScene(4);
             game.End();
             Destroy(gameObject);
         }
+    }
+
+    public void LiveAgain()
+    {
+        playerAttack.enabled = true;
+        var sr = GetComponentInChildren<SpriteRenderer>();
+        sr.enabled = true;
     }
     private void CheckPowerLevel()
     {

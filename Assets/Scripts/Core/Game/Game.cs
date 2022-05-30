@@ -30,7 +30,7 @@ public class Game : MonoBehaviour
     public void IncreasePlayerHealth(int amount) 
     {
         playerHealth += amount;
-        hud.UpdateHealth(playerHealth);
+        FindObjectOfType<HudController>().UpdateHealth(playerHealth);
     }
     public void DecreasePlayerHealth(int amount) 
     {
@@ -39,14 +39,15 @@ public class Game : MonoBehaviour
         {
             isDead = true;
         }
-        hud.UpdateHealth(playerHealth);
+        FindObjectOfType<HudController>().UpdateHealth(playerHealth);
+        //hud.UpdateHealth(playerHealth);
     }
     public bool GetIsDead() { return isDead; }
     public int GetPlayerMaxHealth() { return playerMaxHealth; }
     public void IncreasePlayerMaxHealth(int amount)
     {
         playerMaxHealth += amount;
-        hud.UpdateMaxHealth(playerMaxHealth);
+       FindObjectOfType<HudController>().UpdateMaxHealth(playerMaxHealth);
     }
     public int GetDeaths() { return totalDeaths; }
     public void IncreaseDeathCount(int amount)
@@ -71,7 +72,7 @@ public class Game : MonoBehaviour
         if (respawnEnergy >= respawnEnergyTotal)
             respawnEnergy = respawnEnergyTotal;
 
-        hud.UpdateRespawnEnergy(respawnEnergy);
+         FindObjectOfType<HudController>().UpdateRespawnEnergy(respawnEnergy);
     }
     public bool CheckRespawn(){
         if (respawnEnergy == respawnEnergyTotal)
@@ -82,6 +83,7 @@ public class Game : MonoBehaviour
     public void IncreaseRespawnEnergy()
     {
         respawnEnergyTotal = respawnEnergy + (respawnEnergyTotal / 2);
+        FindObjectOfType<HudController>().UpdateRespawnEnergyTotal(respawnEnergyTotal);
     }
 
     //Power mechanic - power level scales up with score.
@@ -91,7 +93,7 @@ public class Game : MonoBehaviour
     private void IncreasePowerLevel(int amount) 
     {
         powerLevelBarTotal = powerLevelBarTotal + ( powerLevelBarTotal / 4);
-        hud.UpdatePowerLevelBarTotal(powerLevelBarTotal);
+        FindObjectOfType<HudController>().UpdatePowerLevelBarTotal(powerLevelBarTotal);
         powerLevel += amount;
     }
 
@@ -106,11 +108,10 @@ public class Game : MonoBehaviour
            IncreasePowerLevel(1);
            powerLevelBar = 0;
         }
-        hud.UpdatePowerLevelBar(powerLevelBar);
+        FindObjectOfType<HudController>().UpdatePowerLevelBar(powerLevelBar);
     }
     public void Respawn()
-    {
-        spawner.Respawn();
+    {        
         DestroyAllEnemies();
         //increase the players max health
         if (powerLevel >= 5 && powerLevel <= 10)
@@ -124,12 +125,13 @@ public class Game : MonoBehaviour
         playerHealth = playerMaxHealth;
         //Reset the respawn energy and increase the required amount
         respawnEnergy = 0;
-        respawnEnergyTotal = respawnEnergy + 5;
+        respawnEnergyTotal += 5;
         // reset power level bar
         powerLevelBar = 0;
         // Add to deaths
         IncreaseDeathCount(1);
-        updateHudElements();        
+        updateHudElements();
+        FindObjectOfType<Spawner>().Respawn(waveCount);        
     }
 
     private void DestroyAllEnemies()
@@ -149,17 +151,25 @@ public class Game : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    
+    public void LiveAgain()
+    {
+        Time.timeScale = 1;
+        Destroy(GameObject.FindGameObjectWithTag("DeathMessage"));
+        FindObjectOfType<Player>().LiveAgain();
+    }
 
     //Setup wave of waves, once done spawn another set
     //award score
 
     public void updateHudElements()
     {
-        hud.UpdateRespawnEnergyTotal(respawnEnergyTotal);
-        hud.UpdatePowerLevelBar(powerLevelBar);
-        hud.UpdatePowerLevelBarTotal(powerLevelBarTotal);
-        hud.UpdateMaxHealth(playerMaxHealth);
-        hud.UpdateHealth(playerHealth);
+
+        FindObjectOfType<HudController>().UpdateRespawnEnergyTotal(respawnEnergyTotal);
+        FindObjectOfType<HudController>().UpdatePowerLevelBar(powerLevelBar);
+        FindObjectOfType<HudController>().UpdatePowerLevelBarTotal(powerLevelBarTotal);
+        FindObjectOfType<HudController>().UpdateMaxHealth(playerMaxHealth);
+        FindObjectOfType<HudController>().UpdateHealth(playerHealth);
     }
 
     void Awake()
@@ -173,6 +183,7 @@ public class Game : MonoBehaviour
 
         hud = FindObjectOfType<HudController>();
         playerHealth = playerMaxHealth;
-        updateHudElements();
+
+        spawner = FindObjectOfType<Spawner>();
     }
 }

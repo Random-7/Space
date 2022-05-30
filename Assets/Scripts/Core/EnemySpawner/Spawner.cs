@@ -4,25 +4,37 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] Game game;
-    [SerializeField] List<WaveConfig> waveConfigs;
+    [SerializeField] List<WaveConfig> stageOneWaveConfigs;
+    [SerializeField] List<WaveConfig> stageTwoWaveConfigs;
+    [SerializeField] List<WaveConfig> stageThreeWaveConfigs;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnAllWaves(waveConfigs));
+        StartCoroutine(SpawnAllWaves(stageOneWaveConfigs));
     }
 
-    public void Respawn()
+    public void Respawn(int wavecount)
     {
         StopAllCoroutines();
-        StartCoroutine(SpawnAllWaves(waveConfigs));
+        if(wavecount <= 5)
+        {
+            StartCoroutine(SpawnAllWaves(stageOneWaveConfigs));
+        } else if (wavecount >= 5 && wavecount <= 10)
+        {
+            StartCoroutine(SpawnAllWaves(stageTwoWaveConfigs));
+        } else if (wavecount >= 10)
+        {
+            StartCoroutine(SpawnAllWaves(stageThreeWaveConfigs));
+        }
+
     }
 
     private IEnumerator SpawnAllWaves(List<WaveConfig> waveConfigs)
     {
         for (int waveIndex = 0; waveIndex < waveConfigs.Count; waveIndex++)
         {
+            var game = FindObjectOfType<Game>();
             game.IncreaseWaveCount(1);
             yield return StartCoroutine(SpawnEnemiesInWave(waveConfigs[waveIndex]));
         }
@@ -34,7 +46,7 @@ public class Spawner : MonoBehaviour
             var spawnedEnemy = Instantiate(waveConfig.GetEnemyPrefab(), waveConfig.GetStartingWaypoint().position, Quaternion.identity);
             spawnedEnemy.GetComponent<EnemyMovement>().SetWaveConfig(waveConfig);
             spawnedEnemy.GetComponent<Enemy>().SetWeapon(waveConfig.GetWeapon());
-            game.currentEnemies.Add(spawnedEnemy);
+
             yield return new WaitForSeconds(Random.Range(waveConfig.GetSpawnInterval(), 
                 (waveConfig.GetSpawnInterval() + waveConfig.GetSpawnIntervalVariance())));
         }

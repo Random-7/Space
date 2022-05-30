@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Shreddar
+  - DeathMessage
   layers:
   - Default
   - TransparentFX
