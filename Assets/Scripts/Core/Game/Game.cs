@@ -145,6 +145,11 @@ public class Game : MonoBehaviour
         currentEnemies.Remove(gameObject);
     }
 
+    public void End() 
+    {
+        Destroy(gameObject);
+    }
+
     //Setup wave of waves, once done spawn another set
     //award score
 
@@ -165,7 +170,7 @@ public class Game : MonoBehaviour
             Destroy(gameObject);
         
         DontDestroyOnLoad(gameObject);
-        
+
         hud = FindObjectOfType<HudController>();
         playerHealth = playerMaxHealth;
         updateHudElements();

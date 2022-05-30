@@ -46,7 +46,9 @@ public class Player : MonoBehaviour
             game.Respawn();
             
         } else {
-            // end game
+            sceneControl.LoadScene(4);
+            game.End();
+            Destroy(gameObject);
         }
     }
     private void CheckPowerLevel()
