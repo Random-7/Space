@@ -557,6 +557,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94026b6b7472efb4fafe7d56e66c286c, type: 3}
+--- !u!1 &334818817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1648885552919012651, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
+  m_PrefabInstance: {fileID: 8079164627125749030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &334818825
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334818817}
+  m_Enabled: 1
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6974991243538263696, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
@@ -717,6 +730,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1914611844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8209480620863878477, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+  m_PrefabInstance: {fileID: 6974991243302098671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf331de7ed872494aab266734714a0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6974991243302098671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -724,6 +748,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1532593912935559563, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+      propertyPath: game
+      value: 
+      objectReference: {fileID: 1914611844}
+    - target: {fileID: 1532593912935559563, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+      propertyPath: waveConfigs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532593912935559563, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+      propertyPath: waveConfigs.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: f7c22e31717b2924bb8d9fabdb59d79a, type: 2}
+    - target: {fileID: 1532593912935559563, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+      propertyPath: waveConfigs.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 33aa193b7824cce43a5aa35dcc754534, type: 2}
+    - target: {fileID: 6974991243538263698, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6974991244727765719, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
       propertyPath: m_RootOrder
       value: 0

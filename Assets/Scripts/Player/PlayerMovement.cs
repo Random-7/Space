@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         var MovementAndSpeed = movementDir * player.GetSpeed() * boost * Time.fixedDeltaTime;
         transform.Translate(MovementAndSpeed, Space.World);
+
     }
 
     public void MovementDirection(float x, float y)
