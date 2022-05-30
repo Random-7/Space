@@ -46,6 +46,10 @@ public class Weapon : ScriptableObject
         return DamgeRadius;
     }
 
+    public void SetPowerModifer(int amount)
+    {
+        PowerModifer = amount;
+    }
     public void IncreasePowerModifer(int amount)
     {
         PowerModifer += amount;

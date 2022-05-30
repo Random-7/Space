@@ -8,6 +8,7 @@ public class Score : MonoBehaviour
     [SerializeField] Game game;
     [SerializeField] TextMeshProUGUI ScoreValue;
     [SerializeField] TextMeshProUGUI WaveValue;
+    [SerializeField] TextMeshProUGUI DeathValue;
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +23,6 @@ public class Score : MonoBehaviour
     {
         ScoreValue.text = game.GetScore().ToString();
         WaveValue.text = game.GetWaveCount().ToString();
+        DeathValue.text = game.GetDeaths().ToString();
     }
 }

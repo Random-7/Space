@@ -38,10 +38,17 @@ public class Player : MonoBehaviour
     private void Die() 
     {
         //check game for respawn
+        if (game.CheckRespawn())
+        {
             //respawn with improved stats
-        //else
-            //end game
-        print("Dead");
+            UpdateStats();
+        } else {
+            // end game
+        }
     }
     
+    private void UpdateStats()
+    {
+
+    }
 }

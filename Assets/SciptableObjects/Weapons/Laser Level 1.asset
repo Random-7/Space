@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectilePrefabs:
   - {fileID: 7580304506160515758, guid: 56bfe4ddfd8843a4c88f90a33c1dbbe9, type: 3}
-  - {fileID: 6609985292276621232, guid: ae32a87063b079044aa16f8392760329, type: 3}
-  - {fileID: 2582221846593803076, guid: 2cba672f9ddd7274da6113a61d4d1efa, type: 3}
-  - {fileID: 7299749300215461352, guid: fc21e2679074ffc4fb9177e06540c135, type: 3}
+  - {fileID: 3432565741361453387, guid: ae32a87063b079044aa16f8392760329, type: 3}
+  - {fileID: 2543287597771343841, guid: 2cba672f9ddd7274da6113a61d4d1efa, type: 3}
+  - {fileID: 4689011907108443859, guid: fc21e2679074ffc4fb9177e06540c135, type: 3}
   FireRate: 0.75
   ProjectileSpeed: 8
-  PowerModifer: 1
+  PowerModifer: 3
   Damage: 5
   DamgeRadius: 0

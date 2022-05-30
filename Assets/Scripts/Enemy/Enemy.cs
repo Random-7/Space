@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
         Drop Item?
     */
     [SerializeField] int Health = 10;
+    [SerializeField] int Score;
     [SerializeField] Game game;
     [SerializeField] Weapon weapon;
     [SerializeField] Transform Fire1Spawn;
@@ -18,8 +19,9 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       var gameObject = GameObject.Find("Game");
-       game = gameObject.GetComponent<Game>();
+        Score = Health / 2;
+        var gameObject = GameObject.Find("Game");
+        game = gameObject.GetComponent<Game>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,8 @@ public class Enemy : MonoBehaviour
             projectile.GetComponent<ProjectileMovement>().IsEnemyProjectile = true;
             fire1Timer = 0.0f;
         }
+
+        CheckPowerLevel();
     }
 
     public void TakeHit(int amount) 
@@ -49,7 +53,15 @@ public class Enemy : MonoBehaviour
     }
     private void Die()
     {
-        game.IncreaseScore(Health);
+        game.IncreaseScore(Score);
+        game.IncreaseRespawnEnergy(Score);
+        game.IncreasePowerLevelBar(Score);
         Destroy(this.gameObject);
+    }
+
+    private void CheckPowerLevel() 
+    {
+        var powerLevel = game.GetPowerLevel();
+        weapon.SetPowerModifer(powerLevel);
     }
 }
