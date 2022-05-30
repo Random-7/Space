@@ -60,6 +60,7 @@ public class Game : MonoBehaviour
     private void IncreasePowerLevel(int amount) 
     {
         powerLevelBarTotal = powerLevelBarTotal + ( powerLevelBarTotal / 4);
+        hud.UpdatePowerLevelBarTotal(powerLevelBarTotal);
         powerLevel += amount;
     }
 

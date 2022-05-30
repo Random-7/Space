@@ -13,12 +13,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] Game game;
     [SerializeField] Weapon weapon;
     [SerializeField] Transform Fire1Spawn;
+    [SerializeField] Weapon[] weapons;
 
     float fire1Timer = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
+        weapon = weapons[0];
         Score = Health / 2;
         var gameObject = GameObject.Find("Game");
         game = gameObject.GetComponent<Game>();
@@ -61,7 +63,12 @@ public class Enemy : MonoBehaviour
 
     private void CheckPowerLevel() 
     {
-        var powerLevel = game.GetPowerLevel();
-        weapon.SetPowerModifer(powerLevel);
+        if ( game.GetPowerLevel() >= 5 )
+        {
+            weapon = weapons[1];
+        } else if ( game.GetPowerLevel() >= 10)
+        {
+            weapon = weapons[2];
+        }
     }
 }

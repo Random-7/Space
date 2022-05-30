@@ -12,11 +12,19 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Transform Fire2Spawn1;
     [SerializeField] Transform Fire2Spawn2;
 
+    [SerializeField] Weapon[] Weapons;
+
     bool Firing1 = false;
     bool Firing2 = false;
 
     float fire1Timer = 0.0f;
     float fire2Timer = 0.0f;
+
+    void Start()
+    {
+        PrimaryWeapon = Weapons[0];
+        SecondaryWeapon = Weapons[0];
+    }
 
     // Update is called once per frame
     void Update()
@@ -45,5 +53,11 @@ public class PlayerAttack : MonoBehaviour
     public void Fire2(bool firing)
     {
        Firing2 = firing;
+    }
+
+    public void UgradeWeapons(int upgrade) 
+    {
+        PrimaryWeapon = Weapons[upgrade];
+        SecondaryWeapon = Weapons[upgrade];
     }
 }

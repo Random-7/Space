@@ -50,9 +50,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 10
+  Score: 0
   game: {fileID: 0}
   weapon: {fileID: 11400000, guid: 2bfefb4e4d9b7994aa66f6da6a656aff, type: 2}
   Fire1Spawn: {fileID: 4221640401963592392}
+  weapons:
+  - {fileID: 11400000, guid: 2bfefb4e4d9b7994aa66f6da6a656aff, type: 2}
+  - {fileID: 11400000, guid: 25d5ad2c1b1d18a40b8a506b3c11667b, type: 2}
+  - {fileID: 11400000, guid: adf3c736ba8a5eb4a9bb482360a25c66, type: 2}
 --- !u!114 &3353155673479340419
 MonoBehaviour:
   m_ObjectHideFlags: 0

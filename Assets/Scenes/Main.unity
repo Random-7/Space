@@ -573,6 +573,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1532593912935559563, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+      propertyPath: waveConfigs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532593912935559563, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+      propertyPath: waveConfigs.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: f7c22e31717b2924bb8d9fabdb59d79a, type: 2}
+    - target: {fileID: 1532593912935559563, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+      propertyPath: waveConfigs.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 33aa193b7824cce43a5aa35dcc754534, type: 2}
+    - target: {fileID: 1532593912935559563, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+      propertyPath: waveConfigs.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: ac6afe34c8a2f64489fe53f3f294c7c1, type: 2}
+    - target: {fileID: 1532593912935559563, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
+      propertyPath: waveConfigs.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f65c2b87db91c549af907863e2440ff, type: 2}
     - target: {fileID: 6974991244727765719, guid: d0a3ec4520ac4e746806807d1675c3ce, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -682,5 +702,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8079164627125749035, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
+      propertyPath: Weapons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079164627125749035, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
+      propertyPath: Weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2bfefb4e4d9b7994aa66f6da6a656aff, type: 2}
+    - target: {fileID: 8079164627125749035, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
+      propertyPath: Weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 25d5ad2c1b1d18a40b8a506b3c11667b, type: 2}
+    - target: {fileID: 8079164627125749035, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}
+      propertyPath: Weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: adf3c736ba8a5eb4a9bb482360a25c66, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cba3f8d9b0a9343a97f23318c8fcb3, type: 3}

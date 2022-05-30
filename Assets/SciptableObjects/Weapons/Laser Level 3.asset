@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffc90b69f8b21b4ab951d8d28bc5aea, type: 3}
   m_Name: Laser Level 3
   m_EditorClassIdentifier: 
-  ProjectilePrefabs: []
+  ProjectilePrefabs:
+  - {fileID: 7580304506160515758, guid: 9de08c80e8824ea4f8e8bad884d79740, type: 3}
+  - {fileID: 5422112696809748830, guid: f4a8ba5850f52a14aa62199df6f4902c, type: 3}
+  - {fileID: 1981081766830949313, guid: a8fbf495c5acce747ab332a67aef1e78, type: 3}
+  - {fileID: 2690596221183076188, guid: 79980964b42fb414c9e7fd1cf8532d74, type: 3}
   FireRate: 0.25
   ProjectileSpeed: 15
   PowerModifer: 1
