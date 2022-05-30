@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class MenuNav : MonoBehaviour
 {
-    public void PlayClicked()
+    [SerializeField] SceneControl sceneControl;
+    public void ButtonClicked(int i)
     {
-        print("Play clicked");
-
+        sceneControl.LoadScene(i);
     }
-    public void CreditsClicked()
+    
+    public void Exit()
     {
-        print("Credits clicked");
-    }
-    public void QuitClicked()
-    {
-        print("Quit clicked");
+        print("exit");
     }
 }
