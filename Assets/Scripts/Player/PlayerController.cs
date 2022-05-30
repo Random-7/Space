@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     PlayerControls controls;
     Vector2 move;
-    float boost = 1.0f;
+    //float boost = 1.0f;
 
     void Awake()
     {

@@ -58,6 +58,7 @@ public class Enemy : MonoBehaviour
         game.IncreaseScore(Score);
         game.IncreaseRespawnEnergy(Score);
         game.IncreasePowerLevelBar(Score);
+        //game.RemoveEnemy(GameObject.);// does this work ?
         Destroy(this.gameObject);
     }
 

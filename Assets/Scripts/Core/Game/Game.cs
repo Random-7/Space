@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
+    public static Game game;
     [SerializeField] HudController hud;
+    [SerializeField] private int playerMaxHealth = 30;
+    [SerializeField] private int playerHealth;
+    [SerializeField] private bool isDead = false;
+    [SerializeField] private float playerSpeed = 5.0f;
     [SerializeField] private int score = 0;
     [SerializeField] private int waveCount = 0;
 
@@ -16,7 +21,33 @@ public class Game : MonoBehaviour
     [SerializeField] private int powerLevelBarTotal = 15;
 
     [SerializeField] private int totalDeaths = 0;
+    [SerializeField] Spawner spawner;
+    [SerializeField] public List<GameObject> currentEnemies;
 
+    public float GetPlayerSpeed() { return playerSpeed; }
+
+    public int GetPlayerHealth() { return playerHealth; }
+    public void IncreasePlayerHealth(int amount) 
+    {
+        playerHealth += amount;
+        hud.UpdateHealth(playerHealth);
+    }
+    public void DecreasePlayerHealth(int amount) 
+    {
+        playerHealth -= amount;
+        if  (playerHealth <= 0)
+        {
+            isDead = true;
+        }
+        hud.UpdateHealth(playerHealth);
+    }
+    public bool GetIsDead() { return isDead; }
+    public int GetPlayerMaxHealth() { return playerMaxHealth; }
+    public void IncreasePlayerMaxHealth(int amount)
+    {
+        playerMaxHealth += amount;
+        hud.UpdateMaxHealth(playerMaxHealth);
+    }
     public int GetDeaths() { return totalDeaths; }
     public void IncreaseDeathCount(int amount)
     {
@@ -77,20 +108,66 @@ public class Game : MonoBehaviour
         }
         hud.UpdatePowerLevelBar(powerLevelBar);
     }
+    public void Respawn()
+    {
+        spawner.Respawn();
+        DestroyAllEnemies();
+        //increase the players max health
+        if (powerLevel >= 5 && powerLevel <= 10)
+        {
+            IncreasePlayerHealth(10);
+        } else if (powerLevel >= 10 && powerLevel <= 15)
+        {
+            IncreasePlayerHealth(20);
+        }
+        //Reset the player health
+        playerHealth = playerMaxHealth;
+        //Reset the respawn energy and increase the required amount
+        respawnEnergy = 0;
+        respawnEnergyTotal = respawnEnergy + 5;
+        // reset power level bar
+        powerLevelBar = 0;
+        // Add to deaths
+        IncreaseDeathCount(1);
+        updateHudElements();        
+    }
 
+    private void DestroyAllEnemies()
+    {
+        foreach (GameObject e in currentEnemies)
+        {
+            Destroy(e);
+        }
+    }
 
-
-    //Save / Pass stats off to the player
+    public void RemoveEnemy(GameObject gameObject)
+    {
+        currentEnemies.Remove(gameObject);
+    }
 
     //Setup wave of waves, once done spawn another set
     //award score
 
-
-    void Awake()
+    public void updateHudElements()
     {
-        hud = FindObjectOfType<HudController>();
         hud.UpdateRespawnEnergyTotal(respawnEnergyTotal);
         hud.UpdatePowerLevelBar(powerLevelBar);
         hud.UpdatePowerLevelBarTotal(powerLevelBarTotal);
+        hud.UpdateMaxHealth(playerMaxHealth);
+        hud.UpdateHealth(playerHealth);
+    }
+
+    void Awake()
+    {
+        if (game == null)
+            game = this;
+        else
+            Destroy(gameObject);
+        
+        DontDestroyOnLoad(gameObject);
+        
+        hud = FindObjectOfType<HudController>();
+        playerHealth = playerMaxHealth;
+        updateHudElements();
     }
 }

@@ -5,14 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] Game game;
-    [SerializeField] int Health = 30;
-    [SerializeField] int MaxHealth = 30;
-    [SerializeField] float Speed = 5.0f;
     [SerializeField] float BoostAmount = 2.0f;
+    [SerializeField] SceneControl sceneControl;
 
     PlayerAttack playerAttack;
-    HudController hud;
-    public float GetSpeed() { return Speed; }
     public float GetBoostAmount() { return BoostAmount; }
 
     void Start()
@@ -22,10 +18,7 @@ public class Player : MonoBehaviour
        
        playerAttack = GetComponent<PlayerAttack>();
 
-       
-       hud = GameObject.FindObjectOfType<HudController>();
-       hud.UpdateMaxHealth(MaxHealth);
-       hud.UpdateHealth(Health);
+       game.updateHudElements();
     }
 
     void Update()
@@ -33,14 +26,11 @@ public class Player : MonoBehaviour
         CheckPowerLevel();
     }
 
-
     public void TakeHit(int amount)
     {
-        Health = Health - amount;
-        hud.UpdateHealth(Health);
-        if (Health <= 0) {
+       game.DecreasePlayerHealth(amount);
+        if (game.GetIsDead()) {
             Die();
-            hud.UpdateHealth(0);
             return;
         }
     }
@@ -49,20 +39,16 @@ public class Player : MonoBehaviour
     {
         //check game for respawn
         if (game.CheckRespawn())
-        {
-
-            //respawn with improved stats
-            UpdateStats();
+        { 
+            playerAttack.enabled = false;
+            var sr = GetComponent<SpriteRenderer>();
+            sr.enabled = false;
+            game.Respawn();
+            
         } else {
             // end game
         }
     }
-    
-    private void UpdateStats()
-    {
-
-    }
-
     private void CheckPowerLevel()
     {
 

@@ -13,6 +13,12 @@ public class Spawner : MonoBehaviour
         StartCoroutine(SpawnAllWaves(waveConfigs));
     }
 
+    public void Respawn()
+    {
+        StopAllCoroutines();
+        StartCoroutine(SpawnAllWaves(waveConfigs));
+    }
+
     private IEnumerator SpawnAllWaves(List<WaveConfig> waveConfigs)
     {
         for (int waveIndex = 0; waveIndex < waveConfigs.Count; waveIndex++)
@@ -28,6 +34,7 @@ public class Spawner : MonoBehaviour
             var spawnedEnemy = Instantiate(waveConfig.GetEnemyPrefab(), waveConfig.GetStartingWaypoint().position, Quaternion.identity);
             spawnedEnemy.GetComponent<EnemyMovement>().SetWaveConfig(waveConfig);
             spawnedEnemy.GetComponent<Enemy>().SetWeapon(waveConfig.GetWeapon());
+            game.currentEnemies.Add(spawnedEnemy);
             yield return new WaitForSeconds(Random.Range(waveConfig.GetSpawnInterval(), 
                 (waveConfig.GetSpawnInterval() + waveConfig.GetSpawnIntervalVariance())));
         }

@@ -12,7 +12,7 @@ public class WaveConfig : ScriptableObject
     [SerializeField] float spawnInterval = 1f;
     [SerializeField] float spawnIntervalVariance = 0.2f;
     [SerializeField] int numberOfEnemies = 5;
-    [SerializeField] int numberOfRestarts = 0;
+    //[SerializeField] int numberOfRestarts = 0;
 
 
 
